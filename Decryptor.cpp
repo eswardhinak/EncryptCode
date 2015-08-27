@@ -5,12 +5,16 @@ Decryptor::Decryptor(string key, bool directory){
 	this->key = key;
 	this->directory = directory;
 }
-void Decryptor::startDecryption(string path){
+void Decryptor::startDecryption(string path1){
 	if (this->directory){
-
+		for (recursive_directory_iterator end, dir(path1); dir!=end; ++dir){
+			cout << *dir << endl;
+			string dirName = dir->path().string();
+			fileDecrypt(dirName);
+		}
 	}
 	else{
-		fileDecrypt(path);
+		fileDecrypt(path1);
 	}
 }
 int Decryptor::fileDecrypt(string path){

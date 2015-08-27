@@ -84,7 +84,8 @@ int encryptFile(string path, string key){
 	encryptor->startEncryption(path);
 }
 int decryptDirectory(string path, string key){
-	return 0;
+	Decryptor * decryptor = new Decryptor(key, true);
+	decryptor->startDecryption(path);
 }
 int decryptFile(string path, string key){
 	Decryptor * decryptor = new Decryptor(key, false);

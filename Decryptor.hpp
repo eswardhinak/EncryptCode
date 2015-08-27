@@ -1,6 +1,11 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <boost/filesystem.hpp>
+#include <boost/foreach.hpp>
+
+using namespace std;
+using namespace boost::filesystem;
 
 using namespace std;
 

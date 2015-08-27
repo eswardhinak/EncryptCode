@@ -1,10 +1,12 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <dirent.h>
 #include <boost/filesystem.hpp>
 #include <boost/foreach.hpp>
 
 using namespace std;
+using namespace boost::filesystem;
 
 /* Class to encrypt files.*/
 class Encryptor{

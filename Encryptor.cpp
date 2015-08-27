@@ -42,15 +42,19 @@ string Encryptor::fileNameEncrypt(string path){
  	cerr << fileName << endl;
  	return fileName;
 }
-void Encryptor::startEncryption(string path){
+void Encryptor::startEncryption(string path1){
 	//If this is a directory, handle here file by file
 	if (this->directory){
-
+		for (recursive_directory_iterator end, dir(path1); dir!=end; ++dir){
+			cout << *dir << endl;
+			string dirName = dir->path().string();
+			fileEncrypt(dirName);
+		}	
 
 	}
 	//If it is a single file, send to fileEncrypt from here.
 	else{
-		fileEncrypt(path);
+		fileEncrypt(path1);
 	}
 }
 
